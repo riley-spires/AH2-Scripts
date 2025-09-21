@@ -12,6 +12,9 @@ SetControlDelay -1
 
 #Include "../VD.ahk/VD.ah2"
 
+; Environment Variables
+localAppData := EnvGet("localappdata")
+
 ; Function Declarations
 goToDesktop(num) {
     if VD.getCount() < num {
@@ -51,4 +54,4 @@ goToDesktop(num) {
 
 ; Open Applications
 #Enter::Run("wt.exe")
-#z::Run("C:\Program Files\Zen Browser\zen.exe")
+#z::Run(localAppData . "/Vivaldi/Application/vivaldi.exe")
